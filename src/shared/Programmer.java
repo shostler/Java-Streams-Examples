@@ -1,3 +1,5 @@
+package shared;
+
 import java.lang.Override;
 import java.lang.String;
 
@@ -12,8 +14,18 @@ public class Programmer {
         this.favoriteLanguage = favoriteLanguage;
     }
 
+    public String getName() {
+        return name;
+    }
+    public int getYearsExperience() {
+        return yearsExperience;
+    }
+    public Language getFavoriteLanguage() {
+        return favoriteLanguage;
+    }
+
     @Override
     public String toString() {
-        return String.format("%10s%t%2d%t%10s", name, yearsExperience, favoriteLanguage);
+        return String.format("%-15s%2d%15s", name, yearsExperience, favoriteLanguage);
     }
 }
