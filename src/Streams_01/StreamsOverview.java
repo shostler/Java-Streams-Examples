@@ -7,18 +7,20 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import static java.util.stream.Collectors.toList;
+
 /**
  * @author stuart-hostler
  * @since 8/12/15.
  */
-public class Streams_01 {
+public class StreamsOverview {
     public static List<Programmer> initializeProgrammers(){
         return Arrays.asList(
             new Programmer("Bob", 15, Language.CPP),
             new Programmer("John", 1, Language.JAVA),
             new Programmer("Susan", 40, Language.FORTRAN),
             new Programmer("Susan", 3, Language.GOLANG),
-            new Programmer("Wendel", 10, Language.JAVA),
+            new Programmer("Stuart", 10, Language.JAVA),
             new Programmer("Krystal", 6, Language.CPP),
             new Programmer("Krystal", 20, Language.GOLANG)
         );
@@ -35,5 +37,13 @@ public class Streams_01 {
             }
         }
         System.out.println(namesOverFive);
+
+        //Streams
+        System.out.println(
+                programmers.stream()
+                        .filter(programmer -> programmer.getYearsExperience() > 5)
+                        .filter(programmer -> programmer.getFavoriteLanguage().equals(Language.CPP))
+                        .map(programmer -> programmer.getName())
+                        .collect(toList()));
     }
 }
