@@ -26,11 +26,11 @@ public class StreamsReduce {
     public static void main(String[] args) {
         List<Programmer> programmers = initializeProgrammers();
 
-        //some all the programmers years of experience
+        //sum all the programmers years of experience
         int combinedExp = programmers.stream()
                 .map(Programmer::getYearsExperience)
                 .reduce(0, (sum, exp) -> sum + exp);
-                //.reduce(0, Integer::sum);
+                //.reduce(0, Integer::sum);  //added in java 1.8
 
         System.out.println(combinedExp);
 
