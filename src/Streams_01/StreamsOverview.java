@@ -22,7 +22,7 @@ public class StreamsOverview {
             new Programmer("Susan", 3, Language.GOLANG),
             new Programmer("Stuart", 10, Language.JAVA),
             new Programmer("Krystal", 6, Language.CPP),
-            new Programmer("Krystal", 20, Language.GOLANG)
+            new Programmer("Krystal", 25, Language.GOLANG)
         );
     }
 
